@@ -201,6 +201,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 8. Carrusel automático de Testimonios
+    const testimonialsTrack = document.getElementById('testimonials-track');
+    if (testimonialsTrack) {
+        // Duplicamos las tarjetas una vez para lograr el efecto de loop infinito sin cortes
+        const originalCards = Array.from(testimonialsTrack.children);
+        originalCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true'); // Evita que lectores de pantalla lean el contenido duplicado
+            testimonialsTrack.appendChild(clone);
+        });
+
+        // Velocidad constante en px/segundo, sin importar cuántas tarjetas se agreguen luego
+        const pixelsPerSecond = 45;
+        const setWidth = testimonialsTrack.scrollWidth / 2; // La mitad porque duplicamos el contenido
+        const duration = setWidth / pixelsPerSecond;
+        testimonialsTrack.style.animationDuration = `${duration}s`;
+    }
+
     console.log("Estudio Contable Lucero Victoria - Sitio Web Inicializado y Optimizado.");
 });
 
