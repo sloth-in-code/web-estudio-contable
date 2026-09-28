@@ -71,19 +71,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const nombre = document.getElementById('nombre').value;
             const correo = document.getElementById('correo').value;
-            const tipoCliente = document.getElementById('tipo-cliente').value;
+            const tipoClienteInput = contactForm.querySelector('input[name="tipo-cliente"]:checked');
+            const tipoCliente = tipoClienteInput ? tipoClienteInput.value : '';
             const mensaje = document.getElementById('mensaje').value;
 
             // Cambiar estado visual del botón
             const btnSubmit = contactForm.querySelector('.btn-submit');
-            const originalBtnText = btnSubmit.textContent;
-            btnSubmit.textContent = "Enviando mensaje...";
+            const btnText = btnSubmit.querySelector('span');
+            const originalBtnText = btnText.textContent;
+            btnText.textContent = "Enviando mensaje...";
             btnSubmit.disabled = true;
 
             // Caso A: Simulación de prueba (si no se ha configurado la clave)
             if (WEB3FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
                 setTimeout(() => {
-                    btnSubmit.textContent = originalBtnText;
+                    btnText.textContent = originalBtnText;
                     btnSubmit.disabled = false;
 
                     formResponse.innerHTML = `¡Gracias, <strong>${nombre}</strong>! Tu mensaje ha sido recibido con éxito en la simulación. <br><span style="font-size: 13px; font-weight: normal; opacity: 0.85;">(Nota: Configura tu clave de Web3Forms en script.js para recibir correos reales).</span>`;
@@ -127,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     formResponse.className = "form-response-message error";
                 })
                 .then(() => {
-                    btnSubmit.textContent = originalBtnText;
+                    btnText.textContent = originalBtnText;
                     btnSubmit.disabled = false;
                     formResponse.classList.remove('hidden');
                 });

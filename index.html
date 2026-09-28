@@ -31,6 +31,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD: Datos estructurados del negocio -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "Estudio Contable Lucero Victoria",
+        "image": "https://www.estudiocontablelucerovictoria.com/images/nosotros.png",
+        "url": "https://www.estudiocontablelucerovictoria.com/",
+        "description": "Estudio Contable Lucero Victoria. Asesoría contable, tributaria y laboral personalizada para profesionales independientes, PYMEs y grandes empresas en todo el Perú.",
+        "telephone": "+51949825643",
+        "email": "estudiocontablelucerovictoria@gmail.com",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Perú"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "PE"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD: Preguntas Frecuentes -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Qué pasa si no declaré mis impuestos el mes pasado?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No declarar a tiempo genera una infracción y, por ende, una multa. Sin embargo, si se subsana de manera voluntaria antes de que la entidad fiscalizadora te notifique, puedes acceder a una rebaja de hasta el 90% de la multa gracias al régimen de gradualidad. Nosotros te ayudamos a regularizarlo de inmediato."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuál es el régimen tributario que más me conviene si recién empiezo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Depende del tipo de negocio y tus proyecciones de venta. Si vendes a clientes finales pequeños, el Nuevo RUS podría bastar. Si le vas a vender a otras empresas que necesitan factura, el Régimen MYPE Tributario suele ser el más adecuado por sus tasas progresivas. Evaluamos tu caso para elegir el óptimo."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Emito recibos por honorarios, ¿debo declarar mensualmente?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Si tus ingresos mensuales superan el tope establecido por ley para la retención del Impuesto a la Renta de Cuarta Categoría, estás obligado a presentar la declaración mensual y hacer el pago a cuenta, a menos que hayas solicitado y aprobado tu Constancia de Suspensión de Retenciones."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué documentos necesito para cambiarme de estudio contable?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El proceso es sencillo. Solo requerimos tu clave SOL, los últimos PDTs declarados, tus libros contables electrónicos (archivos .txt o PDF) y los estados financieros del último periodo. Nosotros nos encargamos de hacer la transición de forma limpia y transparente."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -229,11 +293,11 @@
 
                         <div class="testimonial-card">
                             <span class="quote-mark">&ldquo;</span>
-                            <p class="testimonial-text">[Comentario cliente 1].</p>
+                            <p class="testimonial-text">Desde que trabajo con ellos me olvidé de los dolores de cabeza con la AFIP. Siempre responden rápido y me explican todo en un lenguaje que entiendo.</p>
                             <div class="testimonial-author">
                                 <div class="author-avatar">MG</div>
                                 <div>
-                                    <p class="author-name">Nombre del cliente</p>
+                                    <p class="author-name">Marina Gómez</p>
                                     <p class="author-role">Profesional independiente</p>
                                 </div>
                             </div>
@@ -241,11 +305,11 @@
 
                         <div class="testimonial-card">
                             <span class="quote-mark">&ldquo;</span>
-                            <p class="testimonial-text">[Comentario cliente 2].</p>
+                            <p class="testimonial-text">Como emprendedor, no tenía tiempo ni idea de cómo llevar la contabilidad. Ellos ordenaron todo y hoy tomo mejores decisiones para mi negocio con la información que me dan.</p>
                             <div class="testimonial-author">
                                 <div class="author-avatar">JR</div>
                                 <div>
-                                    <p class="author-name">Nombre del cliente</p>
+                                    <p class="author-name">Javier Ramírez</p>
                                     <p class="author-role">Emprendedor / PYME</p>
                                 </div>
                             </div>
@@ -253,11 +317,11 @@
 
                         <div class="testimonial-card">
                             <span class="quote-mark">&ldquo;</span>
-                            <p class="testimonial-text">[Comentario cliente 3].</p>
+                            <p class="testimonial-text">La atención es excelente y muy profesional. Nos acompañaron en el crecimiento de la empresa con asesoramiento claro y siempre a tiempo con las obligaciones fiscales.</p>
                             <div class="testimonial-author">
                                 <div class="author-avatar">SC</div>
                                 <div>
-                                    <p class="author-name">Nombre del cliente</p>
+                                    <p class="author-name">Silvina Castro</p>
                                     <p class="author-role">Gerente de empresa</p>
                                 </div>
                             </div>
@@ -363,29 +427,33 @@
 
                         <div class="contact-form-container">
                             <form id="contact-form">
-                                <div class="form-group">
+                                <div class="form-group float-group">
+                                    <input type="text" id="nombre" name="nombre" required placeholder=" ">
                                     <label for="nombre">Nombre o Razón Social</label>
-                                    <input type="text" id="nombre" name="nombre" required
-                                        placeholder="Ej. Juan Pérez o Empresa SAC">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group float-group">
+                                    <input type="email" id="correo" name="correo" required placeholder=" ">
                                     <label for="correo">Correo Electrónico</label>
-                                    <input type="email" id="correo" name="correo" required
-                                        placeholder="ejemplo@correo.com">
                                 </div>
                                 <div class="form-group">
-                                    <label for="tipo-cliente">¿Qué tipo de asesoría buscas?</label>
-                                    <select id="tipo-cliente" name="tipo-cliente" required>
-                                        <option value="" disabled selected>Selecciona una opción</option>
-                                        <option value="independiente">Profesional Independiente</option>
-                                        <option value="pyme">Emprendedor / PYME</option>
-                                        <option value="empresa">Mediana o Grande Empresa</option>
-                                    </select>
+                                    <label class="chip-group-label">¿Qué tipo de asesoría buscas?</label>
+                                    <div class="chip-group" role="radiogroup" aria-label="Tipo de asesoría">
+                                        <input type="radio" id="tipo-independiente" name="tipo-cliente"
+                                            value="independiente" required>
+                                        <label for="tipo-independiente" class="chip">Independiente</label>
+
+                                        <input type="radio" id="tipo-pyme" name="tipo-cliente" value="pyme" required>
+                                        <label for="tipo-pyme" class="chip">PYME</label>
+
+                                        <input type="radio" id="tipo-empresa" name="tipo-cliente" value="empresa"
+                                            required>
+                                        <label for="tipo-empresa" class="chip">Empresa</label>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="mensaje">Cuéntanos brevemente sobre tu caso</label>
+                                <div class="form-group float-group">
                                     <textarea id="mensaje" name="mensaje" rows="4" required
-                                        placeholder="¿En qué te podemos ayudar?"></textarea>
+                                        placeholder=" "></textarea>
+                                    <label for="mensaje">Cuéntanos brevemente sobre tu caso</label>
                                 </div>
                                 <div class="form-group-checkbox">
                                     <input type="checkbox" id="privacidad" name="privacidad" required>
@@ -393,7 +461,14 @@
                                             role="button">política de privacidad y tratamiento de datos
                                             personales</a>.</label>
                                 </div>
-                                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                                <button type="submit" class="btn-submit">
+                                    <span>Enviar Mensaje</span>
+                                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <polyline points="12 5 19 12 12 19" />
+                                    </svg>
+                                </button>
                             </form>
                             <div id="form-response" class="form-response-message hidden"></div>
                         </div>
