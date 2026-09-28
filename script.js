@@ -1,4 +1,4 @@
-// Configuración del Estudio Contable Lucero Victoria
+// Configuración de TributaLux Consultores
 // Para recibir correos de contacto reales, regístrate gratis en web3forms.com y pega tu Access Key aquí:
 const WEB3FORMS_ACCESS_KEY = "7791c6d3-48c3-401c-a7dd-95f216ea3234";
 
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         testimonialsTrack.style.animationDuration = `${duration}s`;
     }
 
-    console.log("Estudio Contable Lucero Victoria - Sitio Web Inicializado y Optimizado.");
+    console.log("TributaLux Consultores - Sitio Web Inicializado y Optimizado.");
 });
 
 
