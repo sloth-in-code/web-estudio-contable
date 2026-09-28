@@ -87,14 +87,14 @@ header {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+    color: var(--marfil);
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.logo img {
-    height: 48px;
-    width: auto;
-    display: block;
+.logo span {
+    color: var(--dorado);
 }
 
 nav {
